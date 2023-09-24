@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vocabulary</title>
+  
+  <style>
+  a {
+    text-decoration: none;
+  }
+  code {
+    background-color: #ccc;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+  </style>
+</head>
+<body>
+
+<h2>Vocabulary</h2>
+
+<ul id="item-list"></ul>
+
+<script>
+
+// 词典可以自行添加或删除，建议至少保留一个词典。
+const dictionaries = [
+  "https://hk.dictionary.search.yahoo.com/search/?p=",
+  "https://www.vocabulary.com/dictionary/",
+];
+
+const items = [
+
+{
+  p: `She became a kind of colored smoke that filled the room and <em>dazzled</em> him.`,
+  words: ["dazzle"],
+},
+{
+  p: `He <em>immersed</em> himself in the air that was of Dua.`,
+  words: ["immerse"],
+},
+{
+  p: `Tritt felt no <em>resistance</em>, no <em>friction</em>.`,
+  words: ["resistance", "friction"],
+},
+{
+  p: `There was just a floating <em>inward</em> and a rapid <em>palpitation</em>.`,
+  words: ["inward", "palpitation"],
+},
+{
+  p: `He felt himself beginning to thin in <em>sympathy</em>.`,
+  words: ["sympathy"],
+},
+{
+  p: `<em>Dimly</em>, he could see Odeen <em>approaching</em> from the other side.`,
+  words: ["dimly", "approach"],
+},
+{
+  p: `He had a <em>brooding</em> look about him that went with his deep-set eyes and the slight <em>asymmetry</em> of his long <em>chin</em>.`,
+  words: ["brooding", "asymmetry", "chin"],
+},
+{
+  p: `His second formal interview with Hallam had been a greater <em>fiasco</em> than the first.`,
+  words: ["fiasco"],
+},
+{
+  p: `"Don't be <em>dramatic</em>," said Myron Bronowski, <em>placidly</em>.`,
+  words: ["dramatic", "placidly"],
+},
+{
+  p: `He was <em>tossing</em> peanuts into the air and catching them in his <em>plump</em>-lipped mouth as they came down.`,
+  words: ["toss", "plump"],
+},
+{
+  p: `Sometimes, in the dark of the night, I <em>lie awake</em> and wonder if different <em>intelligences</em> can communicate at all.`,
+  words: ["lie awake", "intelligences"],
+},
+{
+  p: `"It does," said Lamont <em>savagely</em>, his hands clearly balling into <em>fists</em> within his lab coat pockets.`,
+  words: ["savagely", "fist"],
+},
+{
+  p: `His <em>idiot</em> face gets redder and his eyse <em>bulge</em> and his ears block.`,
+  words: ["idiot", "bulge"],
+},
+{
+  p: `Bronowski <em>murmured</em>, "What a way to speak of the Father of the Electron Pump."`,
+  words: ["murmur"],
+},
+{
+  p: `"That's it. <em>Reputed</em> Father of the Electron Pump. A <em>bastard</em> birth, if ever there was one. His <em>contribution</em> was least in <em>substance</em>. I know."`,
+  words: ["repute", "bastard", "contribution", "substance"],
+},
+{
+  p: `It was a <em>legacy</em> from some dim day when some past <em>inhabitant</em> of the office had wanted <em>tungsten</em> for some long-forgotten reason.`,
+  words: ["legacy", "inhabitant", "tungsten"],
+},
+{
+  p: `It <em>consisted of</em> small <em>pellets</em> of what was now heavily layered with <em>oxide</em> -- gray and dusty.`,
+  words: ["consist of", "pellet", "oxide"],
+},
+{
+  p: `laboratory  <code>/ˌlæbrəˈtɔri/</code> <code>/ləˈbɒrətri/</code>`,
+  words: ["laboratory"],
+},
+{
+  p: `One gets the impression of a <em>keen-eyed chemist</em>, aware of change and instantly drawing <em>deep-seated deductions</em>.`,
+  words: ["keen-eyed", "chemist", "deep-seated", "deduction"],
+},
+{
+  p: `He hated any <em>interference</em> with his desk (as so many do) and he <em>suspected</em> others of <em>possessing keen desires</em> to <em>engage</em> in such interference out of <em>sheer malice</em>.`,
+  words: ["interference", "suspect", "possess", "keen", "engage", "sheer malice"],
+},
+{
+  p: `No one at the time <em>admitted</em> to knowing anything about the matter.`,
+  words: ["admit"],
+},
+{
+  p: ``,
+  words: [""],
+},
+
+];
+
+
+// ----------------
+
+init();
+
+function init() {
+  initItemList();
+}
+
+function initItemList() {
+  const list = document.querySelector("#item-list");
+  for (const item of items) {
+    const li = document.createElement("li");
+    li.innerHTML = item.p + " ";
+    for (const word of item.words) {
+      for (const dict of dictionaries) {
+        const a = document.createElement("a");
+        a.innerText = "🌐";
+        a.href = dict + word;
+        a.title = word;
+        li.appendChild(a);
+      }
+    }
+    list.appendChild(li);
+  }
+}
+
+</script>
+</body>
+</html>

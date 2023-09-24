@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloze test (填空題): Fill in the blanks</title>
+</head>
+<body>
+
+<h2>Cloze test (填空題): Fill in the blanks</h2>
+
+<footer class="mt-5 mb-3">
+  GitHub Repository:
+  <a href="https://github.com/ahui2016/fill-in-the-blanks" target="_blank">
+    github.com/ahui2016/fill-in-the-blanks
+  </a>
+</footer>
+
+<template id="file-item">
+  <div class="FileItem mb-3">
+    <div class="filename font-bold"></div>
+    <div>
+      <span class="datetime mr-1"></span>
+      <span class="filesize mr-2"></span>
+      <a href="#" class="item-buttons view-btn mr-1">view</a>
+      <a href="#" class="item-buttons edit-btn mr-1">edit</a>
+      <a href="#" class="item-buttons dl-btn mr-1">download</a>
+      <a href="#" class="item-buttons toggle-del-btn mr-1">del</a>
+      <a href="#" class="item-buttons del-btn mr-1">delete</a>
+    </div>
+    <div class="item-status"></div>
+  </div>
+</template>
+
+
+<script>
+
+/**
+ * {
+ *   id: int,
+ *   q: string,      // question
+ *   a: string[],    // answers
+ *   tips_1: string, // 提示1
+ *   tips_2: string, // 提示2
+ *   notes: string,  // 說明
+ * }
+ */
+const items = [
+  {
+    id: 0,
+    q: "",
+    a: [""],
+    tips_1: "",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 1,
+    q: "She thinned more than Tritt ____ a person thin.",
+    a: ["had ever seen"],
+    tips_1: "see",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 2,
+    q: "She thinned more than Tritt ____ possible",
+    a: ["would ever have thought"],
+    tips_1: "think",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 3,
+    q: "He couldn't tell whether he was surrounding Odeen or ____ by him or both or neither.",
+    a: ["being surrounded"],
+    tips_1: "surround",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 0,
+    q: "",
+    a: [],
+    tips_1: "",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 0,
+    q: "",
+    a: [],
+    tips_1: "",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 0,
+    q: "",
+    a: [],
+    tips_1: "",
+    tips_2: "",
+    notes: "",
+  },
+  {
+    id: 0,
+    q: "",
+    a: [],
+    tips_1: "",
+    tips_2: "",
+    notes: "",
+  },
+
+];
+</script>
+</body>
+</html>
